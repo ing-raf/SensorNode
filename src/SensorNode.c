@@ -13,7 +13,7 @@ Sensor_Node this;
 
 void initNode (void) {
 	this.ID = SENSOR_NODE_ID;
-	this.num_sensors = SENSOR_NODE_NUMSENSORS;
+	this.num_sensors = SENSOR_NODE_NUMSENSORS; // dobbiamo modificare con la getSensorNumbers
 	this.authentication_key = SENSOR_NODE_KEY;
 }
 
