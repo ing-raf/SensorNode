@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>SensorNode</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/FreeRTOS</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/Generic Sensor Interface</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>src/FreeRTOS/Source</name>
+			<type>2</type>
+			<location>C:/STM32Toolchain/FreeRTOS/FreeRTOS_8.1.2/Source</location>
+		</link>
+		<link>
+			<name>src/Generic Sensor Interface/GSI</name>
+			<type>2</type>
+			<location>C:/Users/Raffaele Martino/Dropbox/SE gruppo 7/GSI</location>
+		</link>
+	</linkedResources>
+	<filteredResources>
+		<filter>
+			<id>1435915372979</id>
+			<name>src/FreeRTOS/Source</name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-CMSIS_RTOS</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>
