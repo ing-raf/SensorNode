@@ -38,7 +38,7 @@
 		<link>
 			<name>src/FreeRTOS/Source</name>
 			<type>2</type>
-			<location>C:/STM32Toolchain/FreeRTOS/FreeRTOS_8.1.2/Source</location>
+			<location>C:/STM32Toolchain/FreeRTOS/FreeRTOSV8.1.2_ST/Source</location>
 		</link>
 		<link>
 			<name>src/Generic Sensor Interface/GSI</name>
