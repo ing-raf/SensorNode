@@ -12,7 +12,7 @@
 
 typedef struct {
 	uint8_t ID;
-	uint8_t num_sensors;
+	uint8_t num_sensors; // dobbiamo modificare con la getSensorNumber
 	int authentication_key;
 } Sensor_Node; // contiene i fatti di questo nodo sensore
 
