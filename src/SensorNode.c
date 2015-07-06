@@ -37,17 +37,28 @@ uint8_t getPriority (Sensor sensor) {
 }
 
 void setReadPeriod (Sensor * sensor, uint32_t read_period) {
+	uint32_t physical_period = 0;
 
+	if (getPeriod(sensor->ID, &physical_period) != OP_OK) {
+		// scrive sul log che c'è stato un accesso errato in lettura
+	}
+
+	// il controllo si deve fare solo per sensori SINCRONI
+	if (physical_period > 0 && read_period < physical_period)
+		sensor->read_period_ms = physical_period;
+	else sensor->read_period_ms = read_period;
 }
 
 uint32_t getReadPeriod (Sensor sensor) {
 	return sensor.read_period_ms;
 }
 
-void setAlarm (Sensor *, Bool);
+void setAlarm (Sensor * sensor, Bool alarm) {
+	sensor->alarm = alarm;
+}
 
 Bool isAlarm (Sensor sensor) {
-	return sensor.alarm
+	return sensor->alarm;
 }
 
 void setTreshold (Sensor *, Value_t, Value_t);

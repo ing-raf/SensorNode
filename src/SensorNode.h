@@ -64,3 +64,4 @@ Bool isAlarm (Sensor);
 void initNode(void); // inizializza questo nodo sensore
 uint16_t getID(void); // ritorna l' ID di questo nodo sensore
 uint8_t getNumSensors(void); // ritorna il numero di sensori del nodo
+uint8_t getSensorID (uint8_t); // ritorna l'ID dell'i-esimo sensore della lista
