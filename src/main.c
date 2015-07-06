@@ -50,10 +50,10 @@ int main(int argc, char* argv[]) {
 
 	for (i = 0; i < n; i++) {
 
-		if (getPeriod(i) > 0) {
+		if (getPeriod(getSensorID(i)) > 0) {
 
-			sync_sensor.ID = i;
-			sync_sensor.period = getPeriod(i);
+			sync_sensor.ID = getSensorID(i);
+			sync_sensor.period = getPeriod(getSensorID(i));
 
 			if (xTaskCreate(syncSensorManage,// nome della funzione
 							"Task di gestione di un sensore sincrono ",
