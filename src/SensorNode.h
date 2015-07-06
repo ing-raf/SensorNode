@@ -57,7 +57,7 @@ uint8_t getPriority (Sensor);
 void setAlarm (Sensor *, Bool);
 Bool isAlarm (Sensor);
 void setTreshold (Sensor *, Value_t, Value_t);
-Bool verifyTreshold (Value_t);
+Bool verifyTreshold (Sensor *, Value_t);
 void setAlarm (Sensor *, Bool);
 Bool isAlarm (Sensor);
 

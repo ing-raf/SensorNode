@@ -61,8 +61,14 @@ Bool isAlarm (Sensor sensor) {
 	return sensor->alarm;
 }
 
-void setTreshold (Sensor *, Value_t, Value_t);
-Bool verifyTreshold (Value_t);
+void setTreshold (Sensor * sensor, Value_t upper, Value_t lower) {
+	sensor->treshold.HighThreshold = upper;
+	sensor->treshold.LowThreshold = lower;
+}
+
+Bool verifyTreshold (Sensor * sensor, Value_t value) {
+
+}
 
 void initNode (void) {
 	int i = 0;
