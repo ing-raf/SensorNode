@@ -32,11 +32,24 @@ void setPriority (Sensor * sensor, uint8_t priority) {
 	sensor->priority=priority;
 }
 
-void setReadPeriod (Sensor *, uint32_t);
-uint32_t getReadPeriod (Sensor);
-uint8_t getPriority (Sensor);
+uint8_t getPriority (Sensor sensor) {
+	return sensor.priority;
+}
+
+void setReadPeriod (Sensor * sensor, uint32_t read_period) {
+
+}
+
+uint32_t getReadPeriod (Sensor sensor) {
+	return sensor.read_period_ms;
+}
+
 void setAlarm (Sensor *, Bool);
-Bool isAlarm (Sensor);
+
+Bool isAlarm (Sensor sensor) {
+	return sensor.alarm
+}
+
 void setTreshold (Sensor *, Value_t, Value_t);
 Bool verifyTreshold (Value_t);
 
