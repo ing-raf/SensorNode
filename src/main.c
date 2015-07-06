@@ -18,8 +18,8 @@
 #include "main.h"
 
 int main(int argc, char* argv[]) {
-	int i = 0;
-	int n = 0;
+	int i = 0;	// indice usato per i cicli for
+	int n = 0;	// variabile per il numero di sensori
 	xQueueHandle queue[NUM_PRIORITIES];
 	Sync_Init sync_sensor;
 
