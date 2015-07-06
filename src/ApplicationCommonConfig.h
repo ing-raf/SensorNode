@@ -8,22 +8,18 @@
 #ifndef APPLICATIONCOMMONCONFIG_H_
 #define APPLICATIONCOMMONCONFIG_H_
 
-
-typedef enum {
-	Best_Effort = 0,
-	Assured_Forwarding,
-    Real_Time,
-} Service_Class;
+#include "TL_API.h"
 
 //-------- Known ports to Protocols Mapping ----------
 
+#define JOIN 0 //
 #define ASE 1 //Asyncronous Syncronous Exchange
 
-//-------- Priorities to Service Classes Mapped -----------
+//-------- Priorities to Service Types Mapped -----------
 
-Service_Class class[] = {
-		Assured_Forwarding, 	// Service Class for priority level 0
-        Real_Time				// Service Class for priority level 1
+ServiceType class[] = {
+		Guaranteed, 	// Service Type for priority level 0
+        Real_Time		// Service Type for priority level 1
 };
 
 //--------- User mustn't modify from this point --------//
