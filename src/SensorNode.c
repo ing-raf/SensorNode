@@ -1,10 +1,3 @@
-// SensorNode.c
-//
-// Version: 0.1
-//
-// Changelog:
-//
-
 #include "SensorNode.h"
 #include "GSI.h"
 #include "SensorNodeConfig.h"
@@ -18,21 +11,20 @@ void initSensor(Sensor * sensor) {
 	 * ID 3 -> niente
 	 */
 	if (sensor->ID < 3) {
-			sensor->alarm = True;
-			sensor->treshold.HighThreshold=UPPER_TRESHOLD;
-			sensor->treshold.LowThreshold=LOWER_TRESHOLD;
-	} else sensor->alarm = False;
+			setAlarm(sensor, True);
+			setTreshold(sensor, UPPER_TRESHOLD, LOWER_TRESHOLD);
+	} else setAlarm(sensor, False);
 
 	if (sensor->ID == 2) sensor->confidential=True;
 	else sensor->confidential=False;
 }
 
 
-void setPriority (Sensor * sensor, uint8_t priority) {
+inline void setPriority (Sensor * sensor, uint8_t priority) {
 	sensor->priority=priority;
 }
 
-uint8_t getPriority (Sensor sensor) {
+inline uint8_t getPriority (Sensor sensor) {
 	return sensor.priority;
 }
 
@@ -49,25 +41,27 @@ void setReadPeriod (Sensor * sensor, uint32_t read_period) {
 	else sensor->read_period_ms = read_period;
 }
 
-uint32_t getReadPeriod (Sensor sensor) {
+inline uint32_t getReadPeriod (Sensor sensor) {
 	return sensor.read_period_ms;
 }
 
-void setAlarm (Sensor * sensor, Bool alarm) {
+inline void setAlarm (Sensor * sensor, Bool alarm) {
 	sensor->alarm = alarm;
 }
 
-Bool isAlarm (Sensor sensor) {
+inline Bool isAlarm (Sensor sensor) {
 	return sensor->alarm;
 }
 
-void setTreshold (Sensor * sensor, Value_t upper, Value_t lower) {
+inline void setTreshold (Sensor * sensor, Value_t upper, Value_t lower) {
 	sensor->treshold.HighThreshold = upper;
 	sensor->treshold.LowThreshold = lower;
 }
 
-Bool verifyTreshold (Sensor * sensor, Value_t value) {
-
+inline Bool verifyTreshold (Sensor * sensor, Value_t value) {
+	if ( value >= sensor->treshold.LowThreshold &&
+			value <= sensor->treshold.HighThreshold) return True;
+	else return False;
 }
 
 void initNode (void) {
@@ -95,4 +89,8 @@ inline uint16_t getID (void) {
 
 inline uint8_t getNumSensors (void) {
 	return this.num_sensors;
+}
+
+inline uint8_t getSensorID (uint8_t index) {
+	return this.sensor[index]->ID;
 }

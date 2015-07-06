@@ -26,7 +26,7 @@ ServiceType class[] = {
 
 const int MAPPED_PRIORITIES = sizeof(class)/sizeof(class[0]);
 
-Service_Class getClass (priority) {
+ServiceType getClass (priority) {
 
     if (priority < MAPPED_PRIORITIES)
         return class[priority];
